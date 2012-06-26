@@ -1,0 +1,18 @@
+<section id="add">
+	<form class="well" action="/sendsms" method="post">
+		<label>Send SMS</label>
+		<input type="text" name= "number" placeholder="To&hellip;">
+		<input type="text" name="content" placeholder="Your SMS&hellip;">
+		<button class="btn btn-primary">Submit</button>
+	</form>
+</section>
+
+<% @sms.each do |sms| %>
+	<table class="table table-bordered table-striped">
+		<p>
+			From: <%= sms.from %>
+			Message: <%= sms.body %>
+		</p>
+		<p class="meta">Created: <%= sms.created_at %></p>
+	</table>
+<% end %>
