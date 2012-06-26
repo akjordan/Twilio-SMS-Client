@@ -35,7 +35,7 @@ helpers do
 
 end
 
-DataMapper::setup(:default,ENV['PG_CREDENTIALS'])
+DataMapper::setup(:default,ENV['DATABASE_URL'])
 
 class Sms
 	include DataMapper::Resource
